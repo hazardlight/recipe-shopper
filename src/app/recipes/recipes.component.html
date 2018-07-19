@@ -4,6 +4,7 @@
     <app-recipe-list></app-recipe-list>
   </div>
   <div class="col-lg-6">
-    <app-recipe-detail></app-recipe-detail>
+    <!-- <app-recipe-detail [recipeName]="receivedName" [recipeDescription]="receivedDescription"></app-recipe-detail> -->
+    <app-recipe-detail *ngIf="receivedRecipe" [recipe]="receivedRecipe"></app-recipe-detail>
   </div>
 </div>

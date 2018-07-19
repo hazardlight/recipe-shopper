@@ -1,10 +1,9 @@
-<app-header></app-header>
-
+<app-header (toggle)="onToggleDisplay($event)"></app-header>
 <div class="container">
   <div class="row">
     <div class="col-lg-12">
-      <app-recipes></app-recipes>
-      <app-shopping></app-shopping>
+      <app-recipes *ngIf="showRecipe"></app-recipes>
+      <app-shopping *ngIf="showShopping"></app-shopping>
     </div>
   </div>
 </div>
