@@ -8,6 +8,7 @@ export class RecipeService {
 
   private recipes: Recipe[] = [
     new Recipe(
+      0,
       "Super Burger",
       "I am salty and delicious!",
       "https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg",
@@ -17,6 +18,7 @@ export class RecipeService {
       ]
     ),
     new Recipe(
+      1,
       "Ultra BURGER",
       "The most wonderful lipid!",
       "https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg",
@@ -29,5 +31,9 @@ export class RecipeService {
 
   getRecipes(){
     return this.recipes.slice();
+  }
+
+  getRecipe(id: number){
+    return this.recipes[id];
   }
 }

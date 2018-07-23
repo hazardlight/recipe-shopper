@@ -2,6 +2,8 @@ import { Component, OnInit, Input} from '@angular/core';
 import { Recipe } from '../../recipe.model';
 import { RecipeService } from '../../../services/recipe.service';
 
+import { Router } from '@angular/router';
+
 @Component({
   selector: 'app-recipe-item',
   templateUrl: './recipe-item.component.html',
@@ -19,14 +21,15 @@ export class RecipeItemComponent implements OnInit {
   // @Output is no longer needed because we're now communicating data via the RecipeService
   // @Output() selectedRecipe = new EventEmitter<void>();
 
-  constructor(private recipeService: RecipeService) { }
+  constructor(private recipeService: RecipeService, private router: Router) { }
 
   ngOnInit() {
   }
 
   selectRecipe(){
     // this.selectedRecipe.emit();
+    // this.recipeService.recipeSelected.emit(this.recipe);
 
-    this.recipeService.recipeSelected.emit(this.recipe);
+    // this.router.navigate(['/recipes', this.recipe.id]);
   }
 }

@@ -5,6 +5,7 @@
   </div>
   <div class="col-lg-6">
     <!-- <app-recipe-detail [recipeName]="receivedName" [recipeDescription]="receivedDescription"></app-recipe-detail> -->
-    <app-recipe-detail *ngIf="receivedRecipe" [recipe]="receivedRecipe"></app-recipe-detail>
+    <!-- <app-recipe-detail *ngIf="receivedRecipe" [recipe]="receivedRecipe"></app-recipe-detail> -->
+    <router-outlet></router-outlet>
   </div>
 </div>

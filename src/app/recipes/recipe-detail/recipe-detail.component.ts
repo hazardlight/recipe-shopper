@@ -1,6 +1,7 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Recipe } from "../recipe.model";
 import {ShoppingListService} from "../../services/shopping-list.service";
+import { ActivatedRoute, Data } from '@angular/router';
 
 @Component({
   selector: 'app-recipe-detail',
@@ -12,14 +13,21 @@ export class RecipeDetailComponent implements OnInit {
   // @Input() recipeName: string;
   // @Input() recipeDescription: string;
 
-  @Input() recipe: Recipe;
+  // @Input() recipe: Recipe;
+
+  recipe: Recipe;
 
   // recipeName: string = this.recipe.name;
   // recipeDescription: string = this.recipe.description;
 
-  constructor(private shoppingListService: ShoppingListService) { }
+  constructor(private shoppingListService: ShoppingListService, private route: ActivatedRoute) { }
 
   ngOnInit() {
+    this.route.data.subscribe(
+      (data: Data) => {
+        this.recipe = data['recipe'];
+      }
+    );
   }
 
   toShoppingList(){

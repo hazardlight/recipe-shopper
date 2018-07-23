@@ -7,20 +7,20 @@ import { Component, Input, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 //
-  showShopping: boolean = false;
-  showRecipe: boolean = true;
+  // showShopping: boolean = false;
+  // showRecipe: boolean = true;
 
   ngOnInit(){
-    console.log("showSopping APP ", this.showShopping);
-    console.log("showRecipe APP ", this.showRecipe);
+    // console.log("showSopping APP ", this.showShopping);
+    // console.log("showRecipe APP ", this.showRecipe);
   }
 
   // showComponent: boolean = true;
 
-  onToggleDisplay(displayData:{showShopping: boolean, showRecipe: boolean})
-  {
-    console.log("onToggleDisplay Fires");
-     this.showShopping = displayData.showShopping;
-     this.showRecipe = displayData.showRecipe;
-  }
+  // onToggleDisplay(displayData:{showShopping: boolean, showRecipe: boolean})
+  // {
+  //   console.log("onToggleDisplay Fires");
+     // this.showShopping = displayData.showShopping;
+     // this.showRecipe = displayData.showRecipe;
+  // }
 }

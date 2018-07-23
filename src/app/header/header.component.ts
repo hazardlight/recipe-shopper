@@ -7,35 +7,35 @@ import { Component, OnInit, Output, EventEmitter } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
 
-  showShoppingList: boolean = false;
-  showRecipeList: boolean = true;
+  // showShoppingList: boolean = false;
+  // showRecipeList: boolean = true;
 
 
-  @Output() toggle = new EventEmitter<{showShopping: boolean, showRecipe: boolean}>();
+  // @Output() toggle = new EventEmitter<{showShopping: boolean, showRecipe: boolean}>();
 
   constructor() { }
 
   ngOnInit() {
   }
 
-  onToggleShoppingRecipe(){
-    console.log("onToggleShoppingRecipe() Fires");
-    console.log("showShoppingList = ", this.showShoppingList);
-    console.log("showRecipeList = ", this.showRecipeList);
-    this.toggle.emit({
-      showShopping: this.showShoppingList,
-      showRecipe: this.showRecipeList
-    });
-  }
-
-  showRecipe(){
-    this.showRecipeList = true;
-    this.showShoppingList = false;
-    this.onToggleShoppingRecipe();
-  }
-  showShopping(){
-    this.showRecipeList = false;
-    this.showShoppingList = true;
-    this.onToggleShoppingRecipe();
-  }
+  // onToggleShoppingRecipe(){
+  //   console.log("onToggleShoppingRecipe() Fires");
+  //   console.log("showShoppingList = ", this.showShoppingList);
+  //   console.log("showRecipeList = ", this.showRecipeList);
+  //   this.toggle.emit({
+  //     showShopping: this.showShoppingList,
+  //     showRecipe: this.showRecipeList
+  //   });
+  // }
+  //
+  // showRecipe(){
+  //   this.showRecipeList = true;
+  //   this.showShoppingList = false;
+  //   this.onToggleShoppingRecipe();
+  // }
+  // showShopping(){
+  //   this.showRecipeList = false;
+  //   this.showShoppingList = true;
+  //   this.onToggleShoppingRecipe();
+  // }
 }
