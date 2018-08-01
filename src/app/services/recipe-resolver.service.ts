@@ -5,7 +5,6 @@ import {Injectable} from '@angular/core';
 import {Observable} from 'rxjs';
 
 interface Recipe {
-  id: number;
   name: string;
   description: string;
   imagePath: string;

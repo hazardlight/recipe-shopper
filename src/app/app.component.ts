@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import * as firebase from 'firebase';
 
 @Component({
   selector: 'app-root',
@@ -11,6 +12,10 @@ export class AppComponent implements OnInit {
   // showRecipe: boolean = true;
 
   ngOnInit(){
+    firebase.initializeApp({
+      apiKey: "AIzaSyBNvOu_xksyf9BXF5r-1DOvhSg8IqepdTM",
+      authDomain: "ng-recipe-book-c9ce0.firebaseapp.com"
+    });
     // console.log("showSopping APP ", this.showShopping);
     // console.log("showRecipe APP ", this.showRecipe);
   }

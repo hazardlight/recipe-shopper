@@ -1,4 +1,6 @@
 import { Component, OnInit, Output, EventEmitter } from '@angular/core';
+import {ServerService} from '../services/server.service';
+import {AuthService} from '../auth/auth.service';
 
 @Component({
   selector: 'app-header',
@@ -13,11 +15,23 @@ export class HeaderComponent implements OnInit {
 
   // @Output() toggle = new EventEmitter<{showShopping: boolean, showRecipe: boolean}>();
 
-  constructor() { }
+  constructor(private serverService: ServerService, private authService: AuthService) { }
 
   ngOnInit() {
   }
 
+  onSaveRecipes(){
+    this.serverService.storeRecipes().subscribe(
+      (response) => console.log(response),
+      (error) => console.log(error)
+    );
+  }
+  onFetchRecipes(){
+    this.serverService.fetchRecipes();
+  }
+  onLogout(){
+    this.authService.logout();
+  }
   // onToggleShoppingRecipe(){
   //   console.log("onToggleShoppingRecipe() Fires");
   //   console.log("showShoppingList = ", this.showShoppingList);

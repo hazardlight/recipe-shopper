@@ -10,6 +10,7 @@ export class DropdownDirective{
 //you can just call a class with class.theClassYouWantToAdd and set it to true?
   @HostBinding('class.open') isOpen = false;
 
+  //DROPDOWN STAYS OPEN AFTER YOU NAVIGATE TO A DIFFERENT ROUTE
   @HostListener('click') toggleOpen (){
     this.isOpen = !this.isOpen;
   }

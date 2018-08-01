@@ -13,6 +13,7 @@ export class RecipeItemComponent implements OnInit {
 
   // @Input('recipe-item') recipe: {name: string, description: string};
   @Input('recipe-item') recipe: Recipe;
+  @Input('recipe-id') id: number;
 
   //technically you're just informing ng what element was selected because the recipe-list component already has access to the recipe data
   //so you don't have to pass a Recipe obj in the emitter
@@ -26,10 +27,10 @@ export class RecipeItemComponent implements OnInit {
   ngOnInit() {
   }
 
-  selectRecipe(){
+  // selectRecipe(){
     // this.selectedRecipe.emit();
     // this.recipeService.recipeSelected.emit(this.recipe);
 
     // this.router.navigate(['/recipes', this.recipe.id]);
-  }
+  // }
 }

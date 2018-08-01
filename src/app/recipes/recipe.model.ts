@@ -7,8 +7,7 @@ export class Recipe {
   public imagePath: string;
   public ingredients: Ingredient[];
 
-  constructor (id: number, name: string, desc: string, imgPath: string, ingredients: Ingredient[]){
-    this.id = id;
+  constructor (name: string, desc: string, imgPath: string, ingredients: Ingredient[]){
     this.name = name;
     this.description = desc;
     this.imagePath = imgPath;

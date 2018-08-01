@@ -1,14 +1,15 @@
 import {EventEmitter} from "@angular/core";
 import { Recipe } from '../recipes/recipe.model';
 import {Ingredient} from '../shared/ingredient.model';
+import {Subject} from 'rxjs';
 
 export class RecipeService {
 
   recipeSelected = new EventEmitter<Recipe>();
+  recipesChanged = new Subject<Recipe[]>();
 
   private recipes: Recipe[] = [
     new Recipe(
-      0,
       "Super Burger",
       "I am salty and delicious!",
       "https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg",
@@ -18,7 +19,6 @@ export class RecipeService {
       ]
     ),
     new Recipe(
-      1,
       "Ultra BURGER",
       "The most wonderful lipid!",
       "https://upload.wikimedia.org/wikipedia/commons/b/be/Burger_King_Angus_Bacon_%26_Cheese_Steak_Burger.jpg",
@@ -32,8 +32,23 @@ export class RecipeService {
   getRecipes(){
     return this.recipes.slice();
   }
-
   getRecipe(id: number){
     return this.recipes[id];
+  }
+  addRecipe(recipe: Recipe){
+    this.recipes.push(recipe);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+  updateRecipe(index: number, newRecipe: Recipe){
+    this.recipes[index] = newRecipe;
+    this.recipesChanged.next(this.recipes.slice());
+  }
+  deleteRecipe(id: number){
+    this.recipes.splice(id, 1);
+    this.recipesChanged.next(this.recipes.slice());
+  }
+  setRecipes(recipes: Recipe[]){
+    this.recipes = recipes;
+    this.recipesChanged.next(this.recipes.slice());
   }
 }
